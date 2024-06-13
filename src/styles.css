@@ -7,81 +7,96 @@ body {
     background-repeat: no-repeat; */
 }
 
-main {}
-
-#main-container {
+main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: auto;
+    place-content: center;
 }
 
-#child-container {}
+#mainContainer {
 
-.menu {
+    display: grid;
+    grid-template-columns: 10% 1fr 10%;
+    grid-template-rows: 35% 15% 50%;
+
+}
+
+.carouselImg {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    grid-area: 1 / 2 / 4 / 3;
     display: flex;
-    border-radius: 3px;
-    background-color: rgb(208, 255, 0);
-    color: black;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.picture-frame {
+    border: 3px solid black;
+    background-color: rgba(204, 219, 62, 0.2);
+    border-radius: 7px;
+    width: 450px;
+    height: 450px;
+}
+
+#previous {
+    grid-area: 2 / 1 / 3 / 2;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+
+.next {
+    grid-area: 2 / 3 / 3 / 4;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+
+/* #arrows {
+    display: flex;
     justify-content: space-between;
-    justify-items: center;
     align-items: center;
-    width: 150px;
+} */
+
+svg {
+    width: 40px;
     height: 40px;
-
 }
 
-.menu button {
-    border: 0;
-    border-radius: 9px;
-    background-color: rgb(208, 255, 0);
-    color: black;
-    font-size: 29px;
-
+img {
+    /* display: none; */
+    /* width: 400px;
+  height: 400px;   */
+    margin: 20px auto;
+    max-width: 400px;
+    height: 400px;
+    object-fit: contain;
 }
 
-#projects {
-    display: none;
-}
+/* .firstImg {
+    display: block;
 
-.project-child-container {
+} */
+
+#circles {
     display: flex;
-}
-
-.tasks {
-
-    border: 1px;
-    border-radius: 9px;
-    padding: 15px;
-    margin: 0;
-    font-size: 20px;
-    /* width: 130px; */
-}
-
-.tasks li {
-    list-style-type: none;
-    /* text-decoration: none; */
-}
-
-.tasks>div {
-    display: flex;
-    margin: 0;
+    justify-content: center;
+    align-items: center;
     gap: 5px;
 }
 
-a {
-    text-decoration: none;
-}
-
-.close  {
-    display: flex;
+.dot {
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    background-color: grey;
-    width: 20px;
-    height: 20px;
+    background-color: yellow;
+    cursor: pointer;
 }
 
-svg {
-    width: 20px;
-    height: 20px;
+.dot.active {
+    background-color: red;
 }
