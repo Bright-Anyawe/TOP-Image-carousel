@@ -13,7 +13,7 @@ const images = [
 
 let currentIndex = 0;
 
-//Display next image in the picture frame
+//Display current image in the picture frame
 function displayCurrentImage() {
   pictureFrame.textContent = "";
 
@@ -24,7 +24,13 @@ function displayCurrentImage() {
   toDoImg.alt = images[currentIndex].alt;
 
   pictureFrame.appendChild(toDoImg);
+
+  //Update the active dot
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === currentIndex)
+  })
 }
+displayCurrentImage()
 
 const displayNextImage = () => {
   //Loop through the images in circular form
@@ -41,4 +47,19 @@ nextEl.addEventListener("click", displayNextImage);
 previousEl.addEventListener("click", prevImage);
 
 
-Show slide for each dot user click
+// Show slide for each dot user click
+function showSlides(index){
+//update the active dot
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+})
+
+    //Display the current image
+    currentIndex = index;
+    displayCurrentImage();
+
+ }
+ 
+ dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => showSlides(index))
+ })
