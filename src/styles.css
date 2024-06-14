@@ -71,10 +71,10 @@ img {
     /* display: none; */
     /* width: 400px;
   height: 400px;   */
-    margin: 20px auto;
-    max-width: 400px;
-    height: 400px;
-    object-fit: contain;
+    margin: auto;
+    max-width: 450px;
+    height: 450px;
+    object-fit: cover;
 }
 
 /* .firstImg {
@@ -87,6 +87,7 @@ img {
     justify-content: center;
     align-items: center;
     gap: 5px;
+
 }
 
 .dot {
@@ -100,3 +101,20 @@ img {
 .dot.active {
     background-color: black;
 }
+
+.dot:hover {
+    background-color: #555;
+
+}
+
+.dot {
+    transition: background-color 0.3s ease;
+    /* Add a smooth transition effect */
+}
+
+.dot.active {
+    transform: scale(1.2);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  
+}
+
